@@ -2,21 +2,29 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.veryworks.android.customview.MainActivity">
 
-    <com.veryworks.android.customview.AniButton
-        xmlns:custom="http://schemas.android.com/apk/res-auto"
+    <com.veryworks.android.customview.CustomView
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.veryworks.android.customview.AniButton xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/aniButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello Custom Widget!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Hello Custom Widget!"
         custom:animation="true"
-        android:id="@+id/aniButton1"
         custom:layout_constraintHorizontal_bias="0.502"
         custom:layout_constraintVertical_bias="0.501" />
 

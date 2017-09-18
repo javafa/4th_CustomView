@@ -1,6 +1,7 @@
 package com.veryworks.android.customview;
 
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
@@ -16,10 +17,19 @@ import android.widget.Toast;
  */
 public class MainActivity extends AppCompatActivity {
 
+    ConstraintLayout stage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        stage = (ConstraintLayout) findViewById(R.id.stage);
+        CustomView cv = new CustomView(this);
+        cv.setX(300);
+        cv.setY(300);
+        stage.addView(cv);
+
 
         findViewById(R.id.aniButton1).setOnClickListener(new View.OnClickListener() {
             @Override
