@@ -1,5 +1,6 @@
 package com.veryworks.android.customview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -30,11 +31,18 @@ public class MainActivity extends AppCompatActivity {
         cv.setY(300);
         stage.addView(cv);
 
-
         findViewById(R.id.aniButton1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "버튼이 클릭되었습니다", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        findViewById(R.id.btnDraw).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DrawActivity.class);
+                startActivity(intent);
             }
         });
     }

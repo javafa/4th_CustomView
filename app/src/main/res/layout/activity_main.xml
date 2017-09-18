@@ -29,11 +29,11 @@
         custom:layout_constraintVertical_bias="0.501" />
 
     <com.veryworks.android.customview.AniButton
-        android:id="@+id/aniButton2"
+        android:id="@+id/btnDraw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="No Animation"
+        android:text="Go To Draw"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
