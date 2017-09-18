@@ -21,10 +21,14 @@ public class DrawView extends View {
         super(context);
         paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.MAGENTA);
+        paint.setColor(Color.BLACK);
         paint.setStrokeWidth(5f);
 
         currentPath = new Path();
+    }
+
+    public void setColor(int color){
+        paint.setColor(color);
     }
 
     // 화면을 그려주는 onDraw 오버라이드
