@@ -2,6 +2,8 @@ package com.veryworks.android.customview;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Toast;
 
 /**
  * 커스텀뷰 만들기
@@ -19,5 +21,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.aniButton1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "버튼이 클릭되었습니다", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

@@ -7,6 +7,7 @@ import android.content.res.TypedArray;
 import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 /**
@@ -14,7 +15,7 @@ import android.view.View;
  * scale 애니메이션을 사용해서
  * 클릭시 살짝 커졌다 작아지는 버튼을 만들어 보세요
  */
-public class AniButton extends AppCompatButton implements View.OnClickListener{
+public class AniButton extends AppCompatButton implements View.OnTouchListener{
 
     boolean animation = false;
 
@@ -44,12 +45,7 @@ public class AniButton extends AppCompatButton implements View.OnClickListener{
             }
         }
 
-        setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        runAnimation();
+        setOnTouchListener(this);
     }
 
     private void runAnimation(){
@@ -61,5 +57,15 @@ public class AniButton extends AppCompatButton implements View.OnClickListener{
             aniSet.setDuration(1000);
             aniSet.start();
         }
+    }
+
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        switch(motionEvent.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                runAnimation();
+                break;
+        }
+        return false;
     }
 }
