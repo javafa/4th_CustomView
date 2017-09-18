@@ -28,7 +28,7 @@ public class DrawView extends View {
         init();
     }
 
-    private void init(){
+    public void init(){
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(5f);
         setColor(Color.BLACK);
